@@ -1,0 +1,49 @@
+Data Aggregation with Collectors API
+Problem Statement:
+
+Java 10 introduced several improvements to the Collectors API, enhancing its versatility for more complex data processing tasks. In this problem, you will use these enhancements to perform detailed data aggregation and analysis on a dataset representing sales records.
+
+Your task is to create a class SalesAnalyzer with methods to analyze a list of SaleRecord objects. Each SaleRecord object contains fields for productName (String), unitsSold (int), and salesRegion (String).
+
+Objectives:
+
+Total Sales by Product: Write a method totalSalesByProduct that calculates the total units sold for each product across all regions. This method should return a map where each key is a product name and the corresponding value is the sum of units sold for that product.
+
+Sales by Region: Write a method salesByRegion that aggregates the total units sold by region, returning a map with the region as the key and the total units as the value.
+
+Top Selling Product in Each Region: Implement a method topSellingProductByRegion that identifies the top-selling product for each region. The method should return a map where each key is a region and the value is another map that specifies the product name and the units sold of the top-selling item.
+
+Sample Data:
+
+java
+Copy code
+List<SaleRecord> records = List.of(
+    new SaleRecord("Laptop", 5, "North"),
+    new SaleRecord("Laptop", 8, "South"),
+    new SaleRecord("Smartphone", 10, "North"),
+    new SaleRecord("Smartphone", 12, "East"),
+    new SaleRecord("Tablet", 3, "North"),
+    new SaleRecord("Tablet", 4, "East")
+);
+Expected Outputs:
+
+Total Sales by Product:
+
+Laptop: 13
+Smartphone: 22
+Tablet: 7
+Sales by Region:
+
+North: 18
+South: 8
+East: 16
+Top Selling Product in Each Region:
+
+North: {Smartphone=10}
+South: {Laptop=8}
+East: {Smartphone=12}
+Instructions:
+
+Use Java 10's Collectors API enhancements effectively in your implementations.
+Pay attention to the use of groupingBy, summingInt, and potentially collectingAndThen or maxBy to solve these problems.
+Ensure that your methods are robust and can handle variations in the input data.
